@@ -54,7 +54,7 @@ $productos = ProductoRepository::listar();
             
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Listado de Productos</h3>
+                    <h3 class="panel-title">Listado de Productos Modificado</h3>
                 </div>
                 <table class="table">
                     <thead>
