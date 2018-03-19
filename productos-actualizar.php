@@ -32,9 +32,13 @@ if($_FILES['imagen']['error']==0){
     
     $productoAnterior = ProductoRepository::obtener($id);
     $filename = Constantes::RUTA_IMAGENES . $productoAnterior->imagen_nombre; 
-    unlink($filename);
+    if(file_exists($filename)){
+        unlink($filename);
+    }
     
-    $producto->imagen_nombre = $_FILES['imagen']['name'];
+    $filename = md5($_FILES['imagen']['name'] . microtime()) . '.' . pathinfo($_FILES['imagen']['name'], PATHINFO_EXTENSION);
+    
+    $producto->imagen_nombre = $filename;
     $producto->imagen_tipo  = $_FILES['imagen']['type'];
     $producto->imagen_tamanio = $_FILES['imagen']['size'];
     
@@ -42,7 +46,7 @@ if($_FILES['imagen']['error']==0){
         mkdir(Constantes::RUTA_IMAGENES, '0777', true);
     }
     
-    $destino = Constantes::RUTA_IMAGENES . $_FILES['imagen']['name'];  // Debe ser el id del producto
+    $destino = Constantes::RUTA_IMAGENES . $filename;
     
     move_uploaded_file($_FILES['imagen']['tmp_name'], $destino);
     

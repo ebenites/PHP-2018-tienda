@@ -80,7 +80,7 @@ $categorias = CategoriaRepository::listar();
                         
                     </div>
                     <div class="panel-footer">
-                        <input type="submit" class="btn btn-primary" value="Registrar"/>
+                        <input type="submit" class="btn btn-primary" value="Actualizar"/>
                         <a href="productos-listar.php" class="btn btn-default">Regresar</a>
                     </div>
                 </div>

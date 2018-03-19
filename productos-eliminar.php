@@ -7,7 +7,9 @@ $producto = ProductoRepository::obtener($id);
 
 $filename = Constantes::RUTA_IMAGENES . $producto->imagen_nombre;
 
-unlink($filename);
+if(file_exists($filename)){
+    unlink($filename);
+}
 
 ProductoRepository::eliminar($id);
 

@@ -79,7 +79,7 @@ $productos = ProductoRepository::listar();
                             <td><?=$producto->nombre?></td>
                             <td><?=$producto->getPrecio()?></td>
                             <td><a href="productos-imagen.php?id=<?=$producto->id?>" class="colorbox" target="_blank"><img src="productos-imagen.php?id=<?=$producto->id?>" height="64"/></a></td>
-                            <td><?=$producto->estado?></td>
+                            <td><?=$producto->getEstado()?></td>
                             <td><a href="productos-mostrar.php?id=<?=$producto->id?>" class="btn btn-info btn-sm colorbox-mostrar"><i class="glyphicon glyphicon-eye-open"></i> Mostrar</a></td>
                             <td><a href="productos-editar.php?id=<?=$producto->id?>" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-pencil"></i> Editar</a></td>
                             <td><a href="javascript:void(0)" onclick="eliminar(<?=$producto->id?>)" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-trash"></i> Eliminar</a></td>
@@ -89,6 +89,7 @@ $productos = ProductoRepository::listar();
                 </table>
                 <div class="panel-footer">
                     <a href="productos-nuevo.php" class="btn btn-success btn-sm"><i class="glyphicon glyphicon-plus"></i> Nuevo</a>
+                    <a href="productos-excel.php" class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-download"></i> Descargar Excel</a>
                 </div>
             </div>
             
