@@ -33,15 +33,15 @@ class Flash {
             unset($_SESSION[self::FLASH_ALERT_SUCCESS]);
         }
         if(isset($_SESSION[self::FLASH_ALERT_INFO])){
-            echo '<div class="alert '.self::FLASH_ALERT_INFO.'">'.$_SESSION[self::FLASH_ALERT_SUCCESS].'</div>';
+            echo '<div class="alert '.self::FLASH_ALERT_INFO.'">'.$_SESSION[self::FLASH_ALERT_INFO].'</div>';
             unset($_SESSION[self::FLASH_ALERT_INFO]);
         }
         if(isset($_SESSION[self::FLASH_ALERT_WARNING])){
-            echo '<div class="alert '.self::FLASH_ALERT_WARNING.'">'.$_SESSION[self::FLASH_ALERT_SUCCESS].'</div>';
+            echo '<div class="alert '.self::FLASH_ALERT_WARNING.'">'.$_SESSION[self::FLASH_ALERT_WARNING].'</div>';
             unset($_SESSION[self::FLASH_ALERT_WARNING]);
         }
         if(isset($_SESSION[self::FLASH_ALERT_DANGER])){
-            echo '<div class="alert '.self::FLASH_ALERT_DANGER.'">'.$_SESSION[self::FLASH_ALERT_SUCCESS].'</div>';
+            echo '<div class="alert '.self::FLASH_ALERT_DANGER.'">'.$_SESSION[self::FLASH_ALERT_DANGER].'</div>';
             unset($_SESSION[self::FLASH_ALERT_DANGER]);
         }
     }

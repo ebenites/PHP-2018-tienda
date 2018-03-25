@@ -41,12 +41,22 @@
 
             </ul>
 
-            <!-- segundo grupo de opciones a la derecha -->
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.php">Ingresar</a></li>
-            </ul>
+            <?php if(isset($_SESSION['usuario'])){ ?>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Perfil</a></li>
+                    <li><a href="logout.php">Salir</a></li>
+                </ul>
+                <?php $usuario = $_SESSION['usuario'] ?>
+                <p class="navbar-text navbar-right"><?=$usuario->nombres?></p>
+            <?php } else {?>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="login.php">Ingresar</a></li>
+                </ul>
+            <?php } ?>
 
         </div>
 
     </div>
 </nav>
+
+<div class="container-fluid"><?=Flash::show()?></div>

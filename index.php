@@ -1,3 +1,7 @@
+<?php
+require_once './autoload.php';
+require_once './includes/security.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
